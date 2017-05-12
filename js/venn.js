@@ -216,4 +216,37 @@ function renderVenn(lhs, rhs) {
     $("#rhs").html(makeFoodString(rhs, venn["rhs"]));
 }
 
-renderVenn("vegan", "AIP");
+// Find all the top-level diets and make buttons for them
+function generateButtons() {
+    // find all the things that are worthy of buttons
+    var diets = [];
+    for (var key in groups) {
+        if (isDiet(key)) {
+            diets.push(key);
+        }
+    }
+
+    // make some buttons
+    var s = "<br/>";
+    for (var i = 0; i < diets.length; i++) {
+        s += '<button id="' + diets[i] + '-button" value="' + diets[i] + '" class="btn">' + diets[i] + '</button>';
+        // todo, fix this with css instead
+        s += "&nbsp;&nbsp;";
+    }
+    // todo css
+    s += "<br/><br/>";
+
+    // render the buttons
+    $("#diet-buttons").html(s);
+
+    // register the buttons with click handlers
+    for (var i = 0; i < diets.length; i++) {
+        var id = "#" + diets[i] + "-button";
+        $(id).on('click', function() {
+                renderVenn("AIP", this.value);
+            });
+    }
+}
+
+generateButtons();
+renderVenn("AIP", "paleo");
