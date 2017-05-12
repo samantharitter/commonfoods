@@ -142,6 +142,34 @@ var groups = {
                     "sheep's cheese" ]
     },
 
+    "processed fats" : {
+        "foods" : [
+                   "margarine",
+                   "crisco",
+                   "canola oil",
+                   "vegetable oil",
+                   "earth's balance"
+                   ]
+    },
+
+    "fats" : {
+        "name" : "fats",
+        "summary" : "fats, for cooking",
+        "groups" : [ "processed fats" ],
+        "foods" : [ "coconut oil",
+                    "olive oil",
+                    "lard",
+                    "chicken fat",
+                    "duck fat",
+                    "ghee",
+                    "butter",
+                    "palm shortening",
+                    "palm oil",
+                    "sesame oil",
+                    "peanut oil",
+                    "sunflower seed oil" ]
+    },
+
     "soy" : {
         "name" : "soy",
         "summary" : "soy",
@@ -170,7 +198,7 @@ var groups = {
     "legumes" : {
         "name" : "legumes",
         "summary" : "legumes",
-        "groups" : [],
+        "groups" : [ "soy" ],
         "foods" : [ "chickpeas",
                     "black beans",
                     "white beans",
@@ -198,7 +226,9 @@ var groups = {
                     "brazil nuts",
                     "walnuts",
                     "hazelnuts",
-                    "pecans" ]
+                    "pecans",
+                    "peanut oil",
+                    "walnut oil" ]
     },
 
     "high mercury fish" : {
@@ -274,10 +304,12 @@ var groups = {
         "summary" : "seeds of plants",
         "groups" : [],
         "foods" : [ "sesame",
+                    "sesame oil",
                     "black pepper",
                     "peppercorns",
                     "pumpkin seeds",
                     "sunflower seeds",
+                    "sunflower seed oil",
                     "poppy seeds" ]
     },
 
@@ -354,6 +386,39 @@ var groups = {
         "groups" : [ "animals", "honey", "dairy", "eggs" ]
     },
 
+    "root vegetables" : {
+        "foods" : [ "sweet potatoes",
+                    "potatoes",
+                    "carrots",
+                    "turnips",
+                    "celeriac",
+                    "beets" ]
+    },
+
+    "winter squash" : {
+        "foods" : [ "butternut squash",
+                    "acorn squash",
+                    "delicata squash",
+                    "pumpkin",
+                    "kabocha squash",
+                    "spaghetti squash" ]
+    },
+
+    "vegetables" : {
+        "foods" : [ "cucumber",
+                    "celery",
+                    "snow peas",
+                    "arugula",
+                    "zucchini",
+                    "summer squash",
+                    "mushrooms",
+                    "lettuce",
+                    "swiss chard",
+                    "spinach",
+                    "mustard greens",
+                    "corn" ]
+    },
+
     "fruits" : {
         "name" : "fruits",
         "summary" : "fruits",
@@ -412,23 +477,34 @@ var groups = {
                     "maltitol" ]
     },
 
+    // Diets
+
+    "paleo" : {
+        "name" : "Paleo",
+        "summary" : "Paleo",
+        "yes" : {},
+        "no" : {
+            "groups" : [ "grains",
+                         "dairy",
+                         "processed fats",
+                         "artificial sweeteners",
+                         "alcohol",
+                         "legumes" ]
+        }
+    },
+
     "AIP" : {
         "name" : "AIP",
         "summary" : "paleo autoimmune protocol",
+        "diets" : [ "paleo" ],
         "yes" : {},
         "no" : {
             "groups" : [ "nightshades",
-                         "grains",
-                         "gluten",
                          "nuts",
                          "seeds",
-                         "dairy",
                          "eggs",
                          "soy",
-                         "artificial sweeteners",
-                         "alcohol",
-                         "caffeine",
-                         "legumes" ],
+                         "caffeine" ],
             "foods" : []
         }
     },

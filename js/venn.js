@@ -216,4 +216,4 @@ function renderVenn(lhs, rhs) {
     $("#rhs").html(makeFoodString(rhs, venn["rhs"]));
 }
 
-renderVenn("vegan", "Sam");
+renderVenn("vegan", "AIP");
